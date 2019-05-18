@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTest"
+        mc:Ignorable="d"
+          Loaded="Window_Loaded"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Dodaj Proizvod" Height="73" Margin="139,39,487,0" VerticalAlignment="Top" Click="AddProduct_Click"/>
+        <Button Content="Prikaži Proizvode" HorizontalAlignment="Left" Margin="456,39,0,0" VerticalAlignment="Top" Width="164" Height="76"  Click="ViewProduct_Click"/>
+        <Button Content="Dodaj Kategoriju" HorizontalAlignment="Left" Margin="139,214,0,0" VerticalAlignment="Top" Width="166" Height="72" Click="AddCategory_Click"/>
+        <Button Content="Prikaz Kategorija" HorizontalAlignment="Left" Margin="456,214,0,0" VerticalAlignment="Top" Width="164" Height="72"  Click="ViewCategory_Click"/>
+
+    </Grid>
+</Window>

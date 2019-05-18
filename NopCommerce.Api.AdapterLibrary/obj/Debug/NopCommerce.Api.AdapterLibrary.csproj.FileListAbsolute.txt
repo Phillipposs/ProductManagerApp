@@ -1,0 +1,6 @@
+D:\Master\Elektronsko Poslovanje\Projekat\nopCommerce-Api-SampleApplication-master\NopCommerce.Api.SampleApplication\NopCommerce.Api.AdapterLibrary\bin\Debug\NopCommerce.Api.AdapterLibrary.dll
+D:\Master\Elektronsko Poslovanje\Projekat\nopCommerce-Api-SampleApplication-master\NopCommerce.Api.SampleApplication\NopCommerce.Api.AdapterLibrary\bin\Debug\NopCommerce.Api.AdapterLibrary.pdb
+D:\Master\Elektronsko Poslovanje\Projekat\nopCommerce-Api-SampleApplication-master\NopCommerce.Api.SampleApplication\NopCommerce.Api.AdapterLibrary\obj\Debug\NopCommerce.Api.AdapterLibrary.csprojAssemblyReference.cache
+D:\Master\Elektronsko Poslovanje\Projekat\nopCommerce-Api-SampleApplication-master\NopCommerce.Api.SampleApplication\NopCommerce.Api.AdapterLibrary\obj\Debug\NopCommerce.Api.AdapterLibrary.csproj.CoreCompileInputs.cache
+D:\Master\Elektronsko Poslovanje\Projekat\nopCommerce-Api-SampleApplication-master\NopCommerce.Api.SampleApplication\NopCommerce.Api.AdapterLibrary\obj\Debug\NopCommerce.Api.AdapterLibrary.dll
+D:\Master\Elektronsko Poslovanje\Projekat\nopCommerce-Api-SampleApplication-master\NopCommerce.Api.SampleApplication\NopCommerce.Api.AdapterLibrary\obj\Debug\NopCommerce.Api.AdapterLibrary.pdb
