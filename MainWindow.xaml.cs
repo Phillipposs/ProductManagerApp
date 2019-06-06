@@ -1,7 +1,10 @@
 ﻿using Newtonsoft.Json;
+using NopCommerce.Api.SampleApplication.DTOs;
 using NopCommerce.Api.SampleApplication.Models;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace WpfTest
@@ -38,10 +41,14 @@ namespace WpfTest
             addCategory.Show();
         }
 
-        private void ViewCategory_Click(object sender, RoutedEventArgs e)
-        {
+        private async void ViewCategory_Click(object sender, RoutedEventArgs e)
+        { HttpClient httpClient = new HttpClient();
             ViewCategory viewCategory = new ViewCategory();
             viewCategory.Show();
+           string response =  httpClient.GetAsync("http://localhost:9388/getcustomers").Result.Content.ReadAsStringAsync().Result;
+           // CustomersRootObject customers = new CustomersRootObject();
+            CustomersRootObject customers =  JsonConvert.DeserializeObject<CustomersRootObject>(response);
+            int x = 0;
         }
         private void GetToken()
         {
@@ -54,7 +61,10 @@ namespace WpfTest
             //CreateProductAsync(userAccessModel);
             new HttpClient().PostAsync("http://localhost:9388/Submit", new StringContent(convertedModel, Encoding.UTF8, "application/json"));
         }
-
+        private Task<HttpResponseMessage> GetCustomersAsync()
+        {
+            return new HttpClient().GetAsync("http://localhost:9388/getcustomers");
+        }
         private void ViewProduct_Click(object sender, RoutedEventArgs e)
         {
             ViewProduct viewProduct = new ViewProduct();

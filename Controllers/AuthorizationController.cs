@@ -10,6 +10,7 @@ using NopCommerce.Api.AdapterLibrary;
 using NopCommerce.Api.SampleApplication.DTOs;
 using System.Linq;
 using WpfTest.Properties;
+using System.Collections.Generic;
 
 namespace NopCommerce.Api.SampleApplication.Controllers
 {
@@ -215,7 +216,7 @@ namespace NopCommerce.Api.SampleApplication.Controllers
             var customers = customersRootObject.Customers.Where(
                 customer => !string.IsNullOrEmpty(customer.FirstName) || !string.IsNullOrEmpty(customer.LastName));
 
-            return View("~/Views/Customers.cshtml", customers);
+            return Ok(customersRootObject);
         }
         private IActionResult BadRequestMsg(string message = "Bad Request")
         {
