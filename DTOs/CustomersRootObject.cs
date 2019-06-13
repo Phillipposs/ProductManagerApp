@@ -6,6 +6,6 @@ namespace NopCommerce.Api.SampleApplication.DTOs
     public class CustomersRootObject
     {
         [JsonProperty("customers")]
-        public List<CustomerApi> Customers { get; set; }
+        public List<CustomerDTO> Customers { get; set; }
     }
 }

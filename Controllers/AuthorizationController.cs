@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using NopCommerce.Api.AdapterLibrary;
 using NopCommerce.Api.SampleApplication.DTOs;
 using System.Linq;
-using WpfTest.Properties;
+using WpfTest.DTOs;
 using System.Collections.Generic;
 
 namespace NopCommerce.Api.SampleApplication.Controllers
@@ -217,6 +217,53 @@ namespace NopCommerce.Api.SampleApplication.Controllers
                 customer => !string.IsNullOrEmpty(customer.FirstName) || !string.IsNullOrEmpty(customer.LastName));
 
             return Ok(customersRootObject);
+        }
+        [HttpGet("getproducts/{id}", Name = "GetProduct")]
+        [AllowAnonymous]
+        public ActionResult GetProduct(int id)
+        {
+            // TODO: Here you should get the data from your database instead of the current Session.
+            // Note: This should not be done in the action! This is only for illustration purposes.
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+
+            string jsonUrl = String.Format("/api/products/{0}",id);//$"/api/products?ids={}";
+            object customersData = nopApiClient.Get(jsonUrl);
+
+            var productsRaw = JsonConvert.DeserializeObject<ProductsRootObject>(customersData.ToString());
+
+            //var customers = productsRaw.Products.Where(
+            //    customer => !string.IsNullOrEmpty(customer.FirstName) || !string.IsNullOrEmpty(customer.LastName));
+
+            return Ok(productsRaw);
+        }
+        [HttpGet("getproducts", Name = "GetProducts")]
+        [AllowAnonymous]
+        public ActionResult GetProducts()
+        {
+            // TODO: Here you should get the data from your database instead of the current Session.
+            // Note: This should not be done in the action! This is only for illustration purposes.
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+
+            string jsonUrl = $"/api/products?fields=id";
+            object productsData = nopApiClient.Get(jsonUrl);
+
+            var productsRaw = JsonConvert.DeserializeObject<ProductsRootObject>(productsData.ToString());
+           
+            //List<int> niz = new List<int>();
+            //foreach(ProductDTO prod in productsRaw.Products)
+            //{
+            //    niz.Add(prod.id);
+            //}
+                        
+            return Ok(productsRaw);
         }
         private IActionResult BadRequestMsg(string message = "Bad Request")
         {

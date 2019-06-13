@@ -659,13 +659,6 @@ C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\ViewProduct.g.cs
 C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\App.g.cs
 C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest_Content.g.cs
 C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest_MarkupCompile.cache
-C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest_MarkupCompile.lref
-C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\AddCategory.baml
-C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\AddProduct.baml
-C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\MainWindow.baml
-C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\ViewCategory.baml
-C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\ViewProduct.baml
-C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest.g.resources
 C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest.Properties.Resources.resources
 C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest.csproj.GenerateResource.cache
 C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest.csproj.CoreCompileInputs.cache
@@ -682,3 +675,10 @@ C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest.Views.pdb
 C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest.csproj.CopyComplete
 C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest.exe
 C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\WpfTest.pdb
+C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\WpfTest_MarkupCompile.lref
+C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\AddCategory.baml
+C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\AddProduct.baml
+C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\MainWindow.baml
+C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\ViewCategory.baml
+C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\ViewProduct.baml
+C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\WpfTest.g.resources

@@ -8471,11 +8471,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Filip\\Source\\Repos\\ProductManagerApp\\WpfTest.csproj",
+      "projectUniqueName": "C:\\Users\\Filip\\source\\repos\\ProductManagerApp\\WpfTest.csproj",
       "projectName": "WpfTest",
-      "projectPath": "C:\\Users\\Filip\\Source\\Repos\\ProductManagerApp\\WpfTest.csproj",
+      "projectPath": "C:\\Users\\Filip\\source\\repos\\ProductManagerApp\\WpfTest.csproj",
       "packagesPath": "C:\\Users\\Filip\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Filip\\Source\\Repos\\ProductManagerApp\\obj\\",
+      "outputPath": "C:\\Users\\Filip\\source\\repos\\ProductManagerApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -41,13 +41,14 @@ namespace WpfTest
             addCategory.Show();
         }
 
-        private async void ViewCategory_Click(object sender, RoutedEventArgs e)
-        { HttpClient httpClient = new HttpClient();
+        private void ViewCategory_Click(object sender, RoutedEventArgs e)
+        {
+            HttpClient httpClient = new HttpClient();
             ViewCategory viewCategory = new ViewCategory();
             viewCategory.Show();
-           string response =  httpClient.GetAsync("http://localhost:9388/getcustomers").Result.Content.ReadAsStringAsync().Result;
-           // CustomersRootObject customers = new CustomersRootObject();
-            CustomersRootObject customers =  JsonConvert.DeserializeObject<CustomersRootObject>(response);
+            string response = httpClient.GetAsync("http://localhost:9388/getcustomers").Result.Content.ReadAsStringAsync().Result;
+            // CustomersRootObject customers = new CustomersRootObject();
+            CustomersRootObject customers = JsonConvert.DeserializeObject<CustomersRootObject>(response);
             int x = 0;
         }
         private void GetToken()
@@ -67,6 +68,8 @@ namespace WpfTest
         }
         private void ViewProduct_Click(object sender, RoutedEventArgs e)
         {
+            
+
             ViewProduct viewProduct = new ViewProduct();
             viewProduct.Show();
         }

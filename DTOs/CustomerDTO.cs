@@ -3,7 +3,7 @@
 namespace NopCommerce.Api.SampleApplication.DTOs
 {
     // Simplified Customer dto object with only the first and last name
-    public class CustomerApi
+    public class CustomerDTO
     {
         [JsonProperty("id")]
         public int Id { get; set; }

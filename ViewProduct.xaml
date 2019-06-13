@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTest"
+          Loaded="Product_Loaded"
         mc:Ignorable="d"
         Title="ViewProduct" Height="450" Width="800">
     <Grid>
@@ -31,7 +32,9 @@
         <Label Content="Visina" HorizontalAlignment="Left" Margin="448,202,0,0" VerticalAlignment="Top" Width="96" Height="24"/>
         <TextBox HorizontalAlignment="Left" Height="24" Margin="572,202,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
         <Label Content="Izaberi ID proizvoda :" HorizontalAlignment="Left" Height="34" Margin="38,19,0,0" VerticalAlignment="Top" Width="126"/>
-        <ComboBox HorizontalAlignment="Left" Margin="177,19,0,0" VerticalAlignment="Top" Width="141" Height="23"/>
+        <ComboBox HorizontalAlignment="Left" Margin="177,19,0,0" VerticalAlignment="Top" Width="141" Height="23" SelectionChanged="ComboBox_SelectionChanged" >
+            <ComboBoxItem>45</ComboBoxItem>
+        </ComboBox>
 
     </Grid>
 </Window>
