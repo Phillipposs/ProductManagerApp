@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfTest.DTOs;
 
 namespace WpfTest
 {
@@ -39,7 +40,22 @@ namespace WpfTest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            new HttpClient().GetAsync("http://localhost:9388/getcustomers");
+            ProductDTO productDTO = new ProductDTO();
+            productDTO.name = ImeProizvoda.Text;
+            productDTO.short_description = KratakOpis.Text;
+            productDTO.full_description = KompletanOpis.Text;
+            productDTO.sku = Sku.Text;
+            productDTO.stock_quantity = Kolicina.Text;
+            productDTO.price = Cena.Text;
+            productDTO.old_price = StaraCena.Text;
+            productDTO.weight = Tezina.Text;
+            productDTO.length = Duzina.Text;
+            productDTO.width = Sirina.Text;
+            productDTO.height = Visina.Text;
+            var convertedModel = JsonConvert.SerializeObject(productDTO);
+            //CreateProductAsync(userAccessModel);
+            new HttpClient().PostAsync("http://localhost:9388/addproduct", new StringContent(convertedModel, Encoding.UTF8, "application/json"));
+            // new HttpClient().GetAsync("http://localhost:9388/getcustomers");
             // _authorizationController.Submit(userAccessModel);
         }
 

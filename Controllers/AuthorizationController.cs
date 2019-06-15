@@ -265,7 +265,25 @@ namespace NopCommerce.Api.SampleApplication.Controllers
                         
             return Ok(productsRaw);
         }
-        private IActionResult BadRequestMsg(string message = "Bad Request")
+        [HttpPost("/addproduct")]
+        [AllowAnonymous]
+        //TODO: it is recommended to have an [Authorize] attribute set
+        public ActionResult AddProduct([FromBody] ProductDTO product)
+        {
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+            ProductSendDTO productSendDTO = new ProductSendDTO();
+            productSendDTO.product = product;
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+            var convertedModel = JsonConvert.SerializeObject(productSendDTO,
+     Formatting.None,
+     new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            string jsonUrl = $"/api/products";
+            object productsData = nopApiClient.Post(jsonUrl, convertedModel);
+            return Ok();
+        }
+            private IActionResult BadRequestMsg(string message = "Bad Request")
         {
             return BadRequest(message);
         }

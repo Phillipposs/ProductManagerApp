@@ -49,7 +49,7 @@ namespace WpfTest
             string response = httpClient.GetAsync("http://localhost:9388/getcustomers").Result.Content.ReadAsStringAsync().Result;
             // CustomersRootObject customers = new CustomersRootObject();
             CustomersRootObject customers = JsonConvert.DeserializeObject<CustomersRootObject>(response);
-            int x = 0;
+
         }
         private void GetToken()
         {

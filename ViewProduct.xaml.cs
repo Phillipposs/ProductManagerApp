@@ -1,10 +1,7 @@
 ﻿
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,12 +14,15 @@ namespace WpfTest
     /// </summary>
     public partial class ViewProduct : Window
     {
+        private int num = 0;
+        private List<int> ids = new List<int>();
         private string no;
         //private List<int> ids = new List<int>();
         
         public ViewProduct()
         {
            InitializeComponent();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -30,29 +30,49 @@ namespace WpfTest
            
             HttpClient httpClient = new HttpClient();
             string response = httpClient.GetAsync("http://localhost:9388/getproducts/"+no).Result.Content.ReadAsStringAsync().Result;
-           
+            var productRoot = JsonConvert.DeserializeObject<ProductsRootObject>(response);
+            var product = productRoot.Products;
+                foreach(var prod in product)
+            {
+                ImeProizvoda.Text = prod.name;
+                KratakOpis.Text = prod.full_description;
+                Sku.Text = prod.sku;
+                Kolicina.Text = prod.stock_quantity;
+                Cena.Text = prod.price;
+                StaraCena.Text = prod.old_price;
+                Tezina.Text = prod.weight;
+                Duzina.Text = prod.length;
+                Sirina.Text = prod.width;
+                Visina.Text = prod.height;
+            }
+
+
         }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBox cmb = sender as ComboBox;
-            no = cmb.SelectedItem.ToString().Split(':')[1].Split(' ')[1];
+            no = cmb.SelectedItem.ToString();
 
 
         }
 
         private void Product_Loaded(object sender, RoutedEventArgs e)
         {
+             IntializeAsync();
+        }
+        private async Task IntializeAsync()
+        {
             HttpClient httpClient = new HttpClient();
-            string response = httpClient.GetAsync("http://localhost:9388/getproducts").Result.Content.ReadAsStringAsync().Result;
-            int[] niz = new int[response.Trim('[', ',', ']').Length];
-            string binary = Convert.ToString(new char(), 2);
-            niz = binary.Select(n => Convert.ToInt32(n)).ToArray();
-             var lista = JsonConvert.DeserializeObject<ProductsRootObject>(response);
-            //foreach(int id in lista)
-            //{
-            //    ids.Add(Convert.ToInt32(response.ElementAt<char>(i)));
-            //}
-            int x = 0;
+            HttpResponseMessage response = await httpClient.GetAsync("http://localhost:9388/getproducts");
+            var res = response.Content.ReadAsStringAsync().Result;
+
+            var lista = JsonConvert.DeserializeObject<ProductsRootObject>(res);
+            num = lista.Products.ToArray().Length;
+            foreach (ProductDTO productDTO in lista.Products)
+            {
+                ids.Add(productDTO.id);
+                comboProducts.Items.Add(productDTO.id);
+            }
         }
     }
 }
