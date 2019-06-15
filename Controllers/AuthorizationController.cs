@@ -267,7 +267,6 @@ namespace NopCommerce.Api.SampleApplication.Controllers
         }
         [HttpPost("/addproduct")]
         [AllowAnonymous]
-        //TODO: it is recommended to have an [Authorize] attribute set
         public ActionResult AddProduct([FromBody] ProductDTO product)
         {
             string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
@@ -277,13 +276,30 @@ namespace NopCommerce.Api.SampleApplication.Controllers
             productSendDTO.product = product;
             var nopApiClient = new ApiClient(accessToken, serverUrl);
             var convertedModel = JsonConvert.SerializeObject(productSendDTO,
-     Formatting.None,
-     new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            Formatting.None,
+            new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
             string jsonUrl = $"/api/products";
             object productsData = nopApiClient.Post(jsonUrl, convertedModel);
             return Ok();
         }
-            private IActionResult BadRequestMsg(string message = "Bad Request")
+        [HttpPost("/addcategory")]
+        [AllowAnonymous]
+        public ActionResult AddCategory([FromBody] CategoryDTO category)
+        {
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+            CategoryPostDTO categoryPostDTO = new CategoryPostDTO();
+            categoryPostDTO.category = category;
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+            var convertedModel = JsonConvert.SerializeObject(categoryPostDTO,
+            Formatting.None,
+            new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            string jsonUrl = $"/api/categories";
+            object productsData = nopApiClient.Post(jsonUrl, convertedModel);
+            return Ok();
+        }
+        private IActionResult BadRequestMsg(string message = "Bad Request")
         {
             return BadRequest(message);
         }
