@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace NopCommerce.Api.SampleApplication.Controllers
 {
-    public class AuthorizationController :Controller
+    public class MainController :Controller
     {
 
 
@@ -240,6 +240,38 @@ namespace NopCommerce.Api.SampleApplication.Controllers
 
             return Ok(productsRaw);
         }
+        [HttpDelete("deleteproducts/{id}", Name = "DeleteProduct")]
+        [AllowAnonymous]
+        public ActionResult DeleteProduct(int id)
+        {
+            // TODO: Here you should get the data from your database instead of the current Session.
+            // Note: This should not be done in the action! This is only for illustration purposes.
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+
+            string jsonUrl = String.Format("/api/products/{0}", id);//$"/api/products?ids={}";
+            object customersData = nopApiClient.Delete(jsonUrl);
+            return Ok();
+        }
+        [HttpDelete("deletecategories/{id}", Name = "DeleteCategory")]
+        [AllowAnonymous]
+        public ActionResult DeleteCategory(int id)
+        {
+            // TODO: Here you should get the data from your database instead of the current Session.
+            // Note: This should not be done in the action! This is only for illustration purposes.
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+
+            string jsonUrl = String.Format("/api/categories/{0}", id);//$"/api/products?ids={}";
+            object customersData = nopApiClient.Delete(jsonUrl);
+            return Ok();
+        }
         [HttpGet("getproducts", Name = "GetProducts")]
         [AllowAnonymous]
         public ActionResult GetProducts()
@@ -282,6 +314,23 @@ namespace NopCommerce.Api.SampleApplication.Controllers
             object productsData = nopApiClient.Post(jsonUrl, convertedModel);
             return Ok();
         }
+        [HttpPost("/updateproduct")]
+        [AllowAnonymous]
+        public ActionResult UpdateProduct([FromBody] ProductDTO product)
+        {
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+            ProductSendDTO productSendDTO = new ProductSendDTO();
+            productSendDTO.product = product;
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+            var convertedModel = JsonConvert.SerializeObject(productSendDTO,
+            Formatting.None,
+            new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            string jsonUrl = String.Format("/api/products/{0}", product.id);
+            object productsData = nopApiClient.Put(jsonUrl, convertedModel);
+            return Ok();
+        }
         [HttpPost("/addcategory")]
         [AllowAnonymous]
         public ActionResult AddCategory([FromBody] CategoryDTO category)
@@ -296,6 +345,87 @@ namespace NopCommerce.Api.SampleApplication.Controllers
             Formatting.None,
             new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
             string jsonUrl = $"/api/categories";
+            object productsData = nopApiClient.Post(jsonUrl, convertedModel);
+            return Ok();
+        }
+        [HttpPost("/updatecategory")]
+        [AllowAnonymous]
+        public ActionResult UpdateCategory([FromBody] CategoryUpdateDTO category)
+        {
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+            CategoryDTO categoryDTO = new CategoryDTO();
+            categoryDTO.name = category.name;
+            categoryDTO.description = category.description;
+            CategoryPostDTO categoryPostDTO = new CategoryPostDTO();
+            categoryPostDTO.category = categoryDTO;
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+            var convertedModel = JsonConvert.SerializeObject(categoryPostDTO,
+            Formatting.None,
+            new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            string jsonUrl = String.Format("/api/categories/{0}", category.id);
+            object productsData = nopApiClient.Put(jsonUrl, convertedModel);
+            return Ok();
+        }
+        [HttpGet("getcategories", Name = "GetCategories")]
+        [AllowAnonymous]
+        public ActionResult GetCategories()
+        {
+            // TODO: Here you should get the data from your database instead of the current Session.
+            // Note: This should not be done in the action! This is only for illustration purposes.
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+
+            string jsonUrl = $"/api/categories?fields=id";
+            object productsData = nopApiClient.Get(jsonUrl);
+
+            var productsRaw = JsonConvert.DeserializeObject<CategoriesRootObject>(productsData.ToString());
+
+            return Ok(productsRaw);
+        }
+        [HttpGet("getcategories/{id}", Name = "GetCategory")]
+        [AllowAnonymous]
+        public ActionResult GetCategory(int id)
+        {
+            // TODO: Here you should get the data from your database instead of the current Session.
+            // Note: This should not be done in the action! This is only for illustration purposes.
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+
+            string jsonUrl = String.Format("/api/categories/{0}", id);
+            object productsData = nopApiClient.Get(jsonUrl);
+
+            var productsRaw = JsonConvert.DeserializeObject<CategoriesRootObject>(productsData.ToString());
+
+            //List<int> niz = new List<int>();
+            //foreach(ProductDTO prod in productsRaw.Products)
+            //{
+            //    niz.Add(prod.id);
+            //}
+
+            return Ok(productsRaw);
+        }
+        [HttpPost("/addcustomer")]
+        [AllowAnonymous]
+        public ActionResult AddCustomer([FromBody] CustomerCreateDTO customer)
+        {
+            string[] lines = System.IO.File.ReadAllLines(@"auth.txt");
+            var accessToken = lines[0];  //Settings.Default["accessToken"].ToString();//HttpContext.Session.GetString("accessToken");
+            var serverUrl = lines[1];
+            CustomerSendDTO customerSendDTO = new CustomerSendDTO();
+            customerSendDTO.customer= customer;
+            var nopApiClient = new ApiClient(accessToken, serverUrl);
+            var convertedModel = JsonConvert.SerializeObject(customerSendDTO,
+            Formatting.None,
+            new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            string jsonUrl = $"/api/customers";
             object productsData = nopApiClient.Post(jsonUrl, convertedModel);
             return Ok();
         }

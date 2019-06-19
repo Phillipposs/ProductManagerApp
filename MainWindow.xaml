@@ -10,8 +10,8 @@
     <Grid>
         <Button Content="Dodaj Proizvod" Height="73" Margin="139,39,487,0" VerticalAlignment="Top" Click="AddProduct_Click"/>
         <Button Content="Prikaži Proizvode" HorizontalAlignment="Left" Margin="456,39,0,0" VerticalAlignment="Top" Width="164" Height="76"  Click="ViewProduct_Click"/>
-        <Button Content="Dodaj Kategoriju" HorizontalAlignment="Left" Margin="139,214,0,0" VerticalAlignment="Top" Width="166" Height="72" Click="AddCategory_Click"/>
-        <Button Content="Prikaz Kategorija" HorizontalAlignment="Left" Margin="456,214,0,0" VerticalAlignment="Top" Width="164" Height="72"  Click="ViewCategory_Click"/>
+        <Button Content="Dodaj Kategoriju" HorizontalAlignment="Left" Margin="139,204,0,0" VerticalAlignment="Top" Width="166" Height="72" Click="AddCategory_Click"/>
+        <Button Content="Prikaz Kategorija" HorizontalAlignment="Left" Margin="456,204,0,0" VerticalAlignment="Top" Width="164" Height="72"  Click="ViewCategory_Click"/>
 
     </Grid>
 </Window>

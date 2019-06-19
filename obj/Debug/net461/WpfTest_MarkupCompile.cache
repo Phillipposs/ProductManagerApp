@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\
+C:\Users\Filip\Source\Repos\ProductManagerApp\obj\Debug\net461\
 WpfTest
 none
 false
 TRACE;DEBUG;NETFRAMEWORK;NET461
-C:\Users\Filip\source\repos\ProductManagerApp\App.xaml
-5-151912238
+C:\Users\Filip\Source\Repos\ProductManagerApp\App.xaml
+6-356058491
 2561700881
-40-2109661147
+50870357637
 2391942255480
-AddCategory.xaml;AddProduct.xaml;MainWindow.xaml;ViewCategory.xaml;ViewProduct.xaml;
+AddCategory.xaml;AddCustomer.xaml;AddProduct.xaml;MainWindow.xaml;ViewCategory.xaml;ViewProduct.xaml;
 
-False
+True
 

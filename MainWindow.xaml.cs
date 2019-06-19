@@ -31,7 +31,7 @@ namespace WpfTest
         }
         private void AddProduct_Click(object sender, RoutedEventArgs e)
         {
-            AddProduct addProduct = new AddProduct(new NopCommerce.Api.SampleApplication.Controllers.AuthorizationController());
+            AddProduct addProduct = new AddProduct(new NopCommerce.Api.SampleApplication.Controllers.MainController());
             addProduct.Show();
         }
 
@@ -72,6 +72,12 @@ namespace WpfTest
 
             ViewProduct viewProduct = new ViewProduct();
             viewProduct.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddCustomer addCustomer = new AddCustomer();
+            addCustomer.Show();
         }
     }
 }

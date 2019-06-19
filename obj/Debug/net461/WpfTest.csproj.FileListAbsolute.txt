@@ -682,3 +682,5 @@ C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\MainWindow.baml
 C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\ViewCategory.baml
 C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\ViewProduct.baml
 C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\WpfTest.g.resources
+C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\AddCustomer.g.cs
+C:\Users\Filip\source\repos\ProductManagerApp\obj\Debug\net461\AddCustomer.baml

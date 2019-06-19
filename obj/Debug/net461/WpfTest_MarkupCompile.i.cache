@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETFRAMEWORK;NET461
 C:\Users\Filip\source\repos\ProductManagerApp\App.xaml
-5-151912238
+6-356058491
 2561700881
-44338698012
+491104160429
 2391942255480
-AddCategory.xaml;AddProduct.xaml;MainWindow.xaml;ViewCategory.xaml;ViewProduct.xaml;
+AddCategory.xaml;AddCustomer.xaml;AddProduct.xaml;MainWindow.xaml;ViewCategory.xaml;ViewProduct.xaml;
 
-False
+True
 

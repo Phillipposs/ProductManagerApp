@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace NopCommerce.Api.SampleApplication.DTOs
+namespace WpfTest.DTOs
 {
-    // Simplified Customer dto object with only the first and last name
-    public class CustomerDTO
+    public class CustomerCreateDTO
     {
-        [JsonProperty("id")]
-        public int Id { get; set; }
-
         [JsonProperty("first_name")]
         public string FirstName { get; set; }
 
@@ -24,6 +24,6 @@ namespace NopCommerce.Api.SampleApplication.DTOs
 
 
         [JsonProperty("role_ids")]
-        public List<int> CustomerRoles { get; set; } = new List<int>();
+        public ICollection<int> CustomerRoles { get; set; } = new List<int>();
     }
 }

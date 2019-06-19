@@ -24,11 +24,11 @@ namespace WpfTest
     /// </summary>
     public partial class AddProduct : Window
     {
-        private AuthorizationController _authorizationController;
+        private MainController _mainController;
         static HttpClient client = new HttpClient();
-        public AddProduct(AuthorizationController authorizationController)
+        public AddProduct(MainController mainController)
         {
-            _authorizationController = authorizationController;
+            _mainController = mainController;
             InitializeComponent();
          
         }

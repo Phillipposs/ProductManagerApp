@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTest"
+        Loaded="Category_Loaded"
         mc:Ignorable="d"
         Title="ViewCategory" Height="450" Width="800">
     <Grid>
@@ -16,10 +17,11 @@
         <Label HorizontalAlignment="Left" Margin="101,165,0,0" VerticalAlignment="Top" Width="121" Height="36">
             <Label Content="Opis"/>
         </Label>
-        <TextBox HorizontalAlignment="Left" Height="36" Margin="287,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
-        <TextBox HorizontalAlignment="Left" Height="36" Margin="287,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
-        <Button Content="Ažuriraj" HorizontalAlignment="Left" Margin="243,283,0,0" VerticalAlignment="Top" Width="106" Height="34"/>
-        <ComboBox HorizontalAlignment="Left" Margin="287,47,0,0" VerticalAlignment="Top" Width="192" Height="35"/>
+        <TextBox x:Name="NazivKategorije" HorizontalAlignment="Left" Height="36" Margin="287,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
+        <TextBox  x:Name="OpisKategorije" HorizontalAlignment="Left" Height="36" Margin="287,165,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
+        <Button Content="Ažuriraj" HorizontalAlignment="Left" Margin="243,283,0,0" VerticalAlignment="Top" Width="106" Height="34" Click="Button_Click"/>
+        <ComboBox x:Name="categoriesCombo" HorizontalAlignment="Left" Margin="287,47,0,0" VerticalAlignment="Top" Width="192" Height="35" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Button Content="Obriši Kategoriju" HorizontalAlignment="Left" Margin="423,283,0,0" VerticalAlignment="Top" Width="96" Height="34" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

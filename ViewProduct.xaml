@@ -8,33 +8,36 @@
         mc:Ignorable="d"
         Title="ViewProduct" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="ImeProizvoda" HorizontalAlignment="Left" Height="24" Margin="177,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
+        <TextBox x:Name="ImeProizvoda" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="37" Margin="177,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
         <Label Content="Ime Proizvoda" HorizontalAlignment="Left" Margin="53,58,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
-        <Label Content="Kratak Opis" HorizontalAlignment="Left" Margin="53,94,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
-        <TextBox x:Name="KratakOpis" HorizontalAlignment="Left" Height="24" Margin="177,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
-        <TextBox  x:Name="KompletanOpis" HorizontalAlignment="Left" Height="24" Margin="177,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
-        <Label Content="Kompletan Opis" HorizontalAlignment="Left" Margin="53,130,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
-        <Label Content="Sku" HorizontalAlignment="Left" Margin="53,164,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
-        <TextBox  x:Name="Sku" HorizontalAlignment="Left" Height="24" Margin="177,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
-        <Label Content="Količina" HorizontalAlignment="Left" Margin="53,202,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
-        <TextBox x:Name="Kolicina" HorizontalAlignment="Left" Height="24" Margin="177,202,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
-        <Label Content="Cena" HorizontalAlignment="Left" Margin="53,238,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
-        <TextBox x:Name="Cena" HorizontalAlignment="Left" Height="24" Margin="177,238,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
+        <Label Content="Kratak Opis" HorizontalAlignment="Left" Margin="53,112,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
+        <TextBox x:Name="KratakOpis" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="42" Margin="177,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
+        <TextBox  x:Name="KompletanOpis" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="38" Margin="177,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
+        <Label Content="Kompletan Opis" HorizontalAlignment="Left" Margin="53,169,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
+        <Label Content="Sku" HorizontalAlignment="Left" Margin="53,218,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
+        <TextBox  x:Name="Sku" HorizontalAlignment="Left" Height="24" Margin="177,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
+        <Label Content="Količina" HorizontalAlignment="Left" Margin="53,256,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
+        <TextBox x:Name="Kolicina" HorizontalAlignment="Left" Height="24" Margin="177,256,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
+        <Label Content="Cena" HorizontalAlignment="Left" Margin="53,292,0,0" VerticalAlignment="Top" Width="95" Height="24"/>
+        <TextBox x:Name="Cena" HorizontalAlignment="Left" Height="24" Margin="177,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
         <Button Content="Ažuriraj" HorizontalAlignment="Left" Margin="328,326,0,0" VerticalAlignment="Top" Width="130" Click="Button_Click" RenderTransformOrigin="1.885,1.025" Height="46"/>
         <TextBox x:Name="StaraCena" HorizontalAlignment="Left" Height="24" Margin="572,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
         <Label Content="Stara Cena" HorizontalAlignment="Left" Margin="448,58,0,0" VerticalAlignment="Top" Width="96" Height="24"/>
         <Label Content="Težina" HorizontalAlignment="Left" Margin="448,94,0,0" VerticalAlignment="Top" Width="96" Height="24"/>
         <TextBox x:Name="Tezina" HorizontalAlignment="Left" Height="24" Margin="572,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
-        <TextBox x:Name="Duzina" HorizontalAlignment="Left" Height="24" Margin="572,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
-        <Label Content="Dužina" HorizontalAlignment="Left" Margin="448,130,0,0" VerticalAlignment="Top" Width="96" Height="24"/>
-        <Label Content="Širina" HorizontalAlignment="Left" Margin="448,164,0,0" VerticalAlignment="Top" Width="96" Height="24"/>
-        <TextBox x:Name="Sirina" HorizontalAlignment="Left" Height="24" Margin="572,164,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
-        <Label Content="Visina" HorizontalAlignment="Left" Margin="448,202,0,0" VerticalAlignment="Top" Width="96" Height="24"/>
-        <TextBox x:Name="Visina" HorizontalAlignment="Left" Height="24" Margin="572,202,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
+        <TextBox x:Name="Duzina" HorizontalAlignment="Left" Height="24" Margin="572,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
+        <Label Content="Dužina" HorizontalAlignment="Left" Margin="448,138,0,0" VerticalAlignment="Top" Width="96" Height="24"/>
+        <Label Content="Širina" HorizontalAlignment="Left" Margin="448,180,0,0" VerticalAlignment="Top" Width="96" Height="24"/>
+        <TextBox x:Name="Sirina" HorizontalAlignment="Left" Height="24" Margin="572,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
+        <Label Content="Visina" HorizontalAlignment="Left" Margin="448,218,0,0" VerticalAlignment="Top" Width="96" Height="24"/>
+        <TextBox x:Name="Visina" HorizontalAlignment="Left" Height="24" Margin="572,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
         <Label Content="Izaberi ID proizvoda :" HorizontalAlignment="Left" Height="34" Margin="38,19,0,0" VerticalAlignment="Top" Width="126"/>
         <ComboBox x:Name="comboProducts" HorizontalAlignment="Left" Margin="177,19,0,0" VerticalAlignment="Top" Width="141" Height="23" SelectionChanged="ComboBox_SelectionChanged" >
 
         </ComboBox>
-
+        <Button Content="Obriši Proizvod" HorizontalAlignment="Left" Height="46" Margin="515,326,0,0" VerticalAlignment="Top" Width="135" Click="Button_Click_1"/>
     </Grid>
+
+
+
 </Window>
